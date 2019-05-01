@@ -1,0 +1,72 @@
+<html>
+<head>
+
+
+
+</head>
+<body>
+<script>
+
+function validation()
+{
+var a=document.getElementById("username").value;
+
+var usercheck= /^[A-Za-z.$@]{3,30}$/;
+
+
+
+var b=document.getElementById("pwd1").value;
+
+var c=document.getElementById("pwd2").value;
+ 
+if(a=="")
+{
+document.getElementById('usererror').innerHTML="** USERNAME CANT BE BLANL!";
+
+return false;;
+}
+
+if(a.length<5)
+{
+document.getElementById('usererror').innerHTML="** USERNAME CANT BE less  than 5";
+
+return false;;
+}
+if(a.length>10)
+{
+document.getElementById('usererror').innerHTML="** USERNAME CANT BE graterthan  than 10";
+
+return false;
+}
+if(usercheck.test(a))
+{
+document.getElementById('usererror').innerHTML="";
+}
+else
+{
+document.getElementById('usererror').innerHTML="user is invalid";
+
+return false;;
+}
+}
+
+</script>
+
+<form onsubmit="return validation()">
+<label> username </label>
+<input type="text" name="" id= "username">
+<span id="usererror"> </span>
+<br>
+<label> password </label>
+<input type="password" name="pwd1" id="pwd1"> <br>
+<br>
+<label> confirmpassword </label>
+
+<input type="password" name="pwd2" id="pwd2"> <br>
+<br>
+<input type="submit">
+
+</form>
+
+</body>
+</html>
